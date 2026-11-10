@@ -1,0 +1,29 @@
+{
+  "name": "zero-block",
+  "engines": {
+    "node": ">=24"
+  },
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "web-ext lint",
+    "chrome:zip": "web-ext build --source-dir public --artifacts-dir dist --filename zephyr-status-\\{version\\}-chrome.zip"
+  },
+  "webExt": {
+    "sourceDir": "dist",
+    "artifactsDir": "web-ext-artifacts",
+    "ignoreFiles": [
+      "*.ts",
+      "*.map"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "chrome-types": "^0.1.434",
+    "typescript": "^6.0.3",
+    "web-ext": "^10.8.0"
+  },
+  "packageManager": "yarn@4.18.1"
+}
